@@ -1,0 +1,92 @@
+.header {
+    @media (min-width: em(640)) {
+        display: flex;
+    }
+
+    &__item {
+        @media (min-width: em(640)) {
+            flex: 0 0 100%;
+            &:last-child {
+                transform: translate(-100%, 0px);
+            }
+        }
+    }
+
+    &__img-ibg {
+        @media (min-width: em(640)) {
+            width: 50%;
+            min-height: 100vh;
+        }
+        @media (max-width: $mobile) {
+            width: 40%;
+        }
+    }
+
+    &__container {
+    }
+    &__body {
+        min-height: 100vh;
+        padding: 70px 0px 60px 100px;
+        display: flex;
+        flex-direction: column;
+        margin: 0px 0px 0px auto;
+        @media (min-width: $mobile) {
+            padding: 50px 0px 50px 50px;
+            width: 50%;
+        }
+        @media (max-width: $mobile) {
+            width: 60%;
+            padding: 40px 0px 40px 20px;
+        }
+        @media (max-width: em(640)) {
+            padding: 40px 0;
+            margin: 0;
+            width: 100%;
+        }
+        @media (max-width: $mobileSmall) {
+            padding: 30px 0;
+        }
+    }
+
+    &__top {
+        flex: 1 1 auto;
+        *:last-child {
+            margin: 0;
+        }
+    }
+
+    &__logo {
+    }
+
+    &__title {
+    }
+
+    &__text {
+    }
+
+    &__button {
+        @media (max-width: $mobileSmall) {
+            width: 100%;
+        }
+        min-width: 250px;
+    }
+
+    &__bottom {
+        font-size: rem(18);
+        line-height: math.div(20, 18);
+        margin-top: rem(10);
+    }
+
+    &__link {
+        font-weight: 500;
+        font-size: rem(20);
+        line-height: math.div(22, 20);
+        color: #c35b48;
+        transition: all 0.3s ease 0s;
+        @media (any-hover: hover) {
+            &:hover {
+                color: $primaryColor;
+            }
+        }
+    }
+}

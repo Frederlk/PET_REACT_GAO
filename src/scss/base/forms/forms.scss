@@ -1,21 +1,3 @@
-//<FORM>
-// Снипет (HTML):
-.form {
-	&__row {
-	}
-	&__column {
-	}
-	&__line {
-	}
-	&__input {
-	}
-	&__button {
-	}
-	&__error {
-	}
-}
-//</FORM>
-
 // <BUTTONS>
 // Снипет (HTML): btn
 @import "button";
@@ -31,19 +13,3 @@
 // <RADIO>
 // Снипет (HTML): opt
 @import "radio";
-
-// <SELECT>
-// Снипет (HTML): sel
-// @import "select";
-
-// <RATING>
-// Снипет (HTML): rating
-// @import "rating";
-
-// <QUANTITY>
-// Снипет (HTML): qa
-// @import "quantity";
-
-// <RANGE>
-// Снипет (HTML):
-// @import "range";

@@ -1,5 +1,4 @@
-// Заголовки, общие БЄМ блоки и проче...
-.logo {
+%logo {
     display: inline-flex;
     margin-bottom: rem(90);
     @include adaptiveValue("margin-bottom", 90, 60);
@@ -7,7 +6,7 @@
         max-width: 100%;
     }
 }
-.title {
+%title {
     font-weight: 500;
     font-size: rem(50);
     line-height: math.div(56, 50);
@@ -16,13 +15,13 @@
         font-size: rem(40);
     }
 }
-.text {
+%text {
     font-size: rem(20);
     line-height: math.div(22, 20);
     margin-bottom: rem(40);
     color: $greyColor_1;
 }
-.label {
+%label {
     font-weight: 500;
     line-height: math.div(28, 25);
     font-size: rem(25);
@@ -33,7 +32,7 @@
 
 .top {
     @media (min-width: $mobile) {
-        max-width: 600px;
+        max-width: rem(600);
     }
     &__title {
     }
@@ -50,5 +49,21 @@
     }
 
     &__input {
+    }
+}
+
+//========================================================================================================================================================
+
+.spinner {
+    text-align: center;
+    margin: rem(100) auto;
+    @include adaptiveValue("width", 400, 150, 991.98, 479.98, 1);
+    @include adaptiveValue("heigth", 300, 150, 991.98, 479.98, 1);
+    max-width: 60%;
+    svg {
+        max-width: 100%;
+        circle {
+            fill: $mainColor;
+        }
     }
 }

@@ -1,75 +1,51 @@
 {
-	"name": "fls-start",
-	"version": "3.0.0",
-	"description": "Start template with Gulp and Webpack",
-	"author": "FLS",
-	"private": true,
-	"license": "",
-	"type": "module",
-	"scripts": {
-		"dev": "gulp && webpack serve --progress -c config/webpack.dev.js",
-		"build": "gulp build --build",
-		"sprite": "gulp sprite",
-		"fonts": "gulp fonts --rewrite",
-		"deploy": "gulp deployFTP --build",
-		"zip": "gulp deployZIP --build",
-		"devbuild": "gulp build --build --nowebp",
-		"tmp": "gulp -f gulpfile.tmp.js",
-		"bem": "fls-bemtree-from-html"
-	},
-	"devDependencies": {
-		"copy-webpack-plugin": "latest",
-		"css-loader": "latest",
-		"del": "latest",
-		"file-include-webpack-plugin-replace": "latest",
-		"fls-bemtree-from-html": "^1.0.0",
-		"gulp": "latest",
-		"gulp-autoprefixer": "latest",
-		"gulp-clean-css": "latest",
-		"gulp-fonter-fix": "latest",
-		"gulp-group-css-media-queries": "latest",
-		"gulp-if": "latest",
-		"gulp-imagemin": "latest",
-		"gulp-newer": "latest",
-		"gulp-notify": "latest",
-		"gulp-plumber": "latest",
-		"gulp-prettier": "latest",
-		"gulp-rename": "latest",
-		"gulp-svg-sprite": "latest",
-		"gulp-ttf2woff": "latest",
-		"gulp-ttf2woff2": "latest",
-		"gulp-util": "latest",
-		"gulp-version-number": "latest",
-		"gulp-webp": "latest",
-		"gulp-webp-html-nosvg": "latest",
-		"gulp-webpcss": "latest",
-		"gulp-zip": "latest",
-		"html-webpack-plugin": "latest",
-		"inputmask": "latest",
-		"lightgallery": "latest",
-		"load-plugins": "latest",
-		"mini-css-extract-plugin": "2.4.7",
-		"nouislider": "latest",
-		"pug": "latest",
-		"pug-loader": "latest",
-		"sass": "latest",
-		"sass-loader": "latest",
-		"smooth-scroll": "latest",
-		"string-replace-loader": "latest",
-		"style-loader": "latest",
-		"swiper": "latest",
-		"terser-webpack-plugin": "latest",
-		"tippy.js": "latest",
-		"transform-runtime": "0.0.0",
-		"vanilla-lazyload": "latest",
-		"vinyl-ftp": "latest",
-		"webp-converter": "2.2.3",
-		"webpack": "latest",
-		"webpack-cli": "latest",
-		"webpack-dev-server": "latest",
-		"webpack-stream": "latest"
-	},
-	"dependencies": {
-		"simplebar": "latest"
-	}
+  "name": "react-ts-redux__template",
+  "version": "0.1.1",
+  "private": true,
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.8.5",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.11.58",
+    "@types/react": "^18.0.18",
+    "@types/react-dom": "^18.0.6",
+    "@types/react-helmet": "^6.1.5",
+    "formik": "^2.2.9",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
+    "react-redux": "^8.0.2",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "5.0.1",
+    "sass": "^1.54.9",
+    "typescript": "^4.8.3",
+    "web-vitals": "^2.1.4",
+    "yup": "^0.32.11"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
