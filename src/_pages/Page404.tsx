@@ -3,9 +3,7 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
 import { RouteNames } from "../routes";
-import { defaultImages } from "../constants/images";
-
-const { logo } = defaultImages;
+import { Logo } from "../_components";
 
 const Page404: FC = () => {
     return (
@@ -17,9 +15,7 @@ const Page404: FC = () => {
 
             <section className="page404">
                 <div className="page404__container">
-                    <Link to={RouteNames.HOME} className="logo">
-                        <img src={logo} alt="GAO Logo" />
-                    </Link>
+                    <Logo />
                     <h2 className="title">Error 404</h2>
                     <div className="text">Are you lost?</div>
                     <Link to={RouteNames.HOME} className="page404__button button">

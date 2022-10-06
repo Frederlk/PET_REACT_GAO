@@ -46,7 +46,7 @@ $mobileSmall: em(479.98); // Телефоны S
 @import "base/null";
 
 body {
-    // Скролл заблокирован
+    @include scrollbars(rem(12), $primaryColor, $lightColor); // Скролл заблокирован
     .lock & {
         overflow: hidden;
         touch-action: none;
@@ -93,3 +93,4 @@ body {
 
 // Подключение стилей отдельных страниц
 @import "_pages/home";
+@import "_pages/form";

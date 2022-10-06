@@ -1,11 +1,8 @@
-//<BUTTONS (a.btn+tab)>
-// Снипет (HTML): btn
-
 .buttons {
     margin-top: rem(40);
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: rem(20);
     @media (max-width: $mobileSmall) {
         flex-wrap: wrap;
         flex-direction: column-reverse;
@@ -17,31 +14,25 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    min-height: 60px;
-    border: 1px solid $primaryColor;
+    min-height: rem(60);
+    border: rem(1) solid $primaryColor;
     background-color: $primaryColor;
     color: $lightColor;
     font-weight: 500;
     font-size: rem(22);
     line-height: math.div(24, 22);
-    padding: 5px 20px;
-    transition: all 0.3s ease 0s;
-    gap: 40px;
-    min-width: 140px;
-    svg {
-        transition: all 0.3s ease 0s;
-    }
+    padding: rem(5) rem(20);
+    transition: border 0.3s ease 0s, background-color 0.3s ease 0s, color 0.3s ease 0s;
+    gap: rem(40);
+    min-width: rem(140);
     @media (max-width: $mobileSmall) {
         width: 100%;
     }
     @media (any-hover: hover) {
         &:hover {
             background: $lightColor;
-            border: 1px solid $greyColor_3;
+            border: rem(1) solid $greyColor_3;
             color: $mainColor;
-            svg {
-                fill: $mainColor;
-            }
         }
     }
 
@@ -49,12 +40,12 @@
 
     &_outline {
         background: $lightColor;
-        border: 1px solid $greyColor_3;
+        border: rem(1) solid $greyColor_3;
         color: $mainColor;
         @media (any-hover: hover) {
             &:hover {
                 background-color: $greyColor_1;
-                border: 1px solid $greyColor_1;
+                border: rem(1) solid $greyColor_1;
                 color: $lightColor;
             }
         }

@@ -1,12 +1,10 @@
 .form-page {
-    &__container {
-    }
-
     &__content {
         display: flex;
         flex-direction: column;
         min-height: 100vh;
-        padding: 40px 0px 50px 0px;
+        padding-top: rem(40);
+        padding-bottom: rem(50);
     }
 
     &__form {
@@ -17,12 +15,6 @@
 //========================================================================================================================================================
 
 .form {
-    &__progress {
-    }
-
-    &__steps {
-    }
-
     &__step {
         display: none;
         &._active {
@@ -36,12 +28,6 @@
             display: block;
         }
     }
-
-    &__buttons {
-    }
-
-    &__button {
-    }
 }
 
 //========================================================================================================================================================
@@ -50,23 +36,23 @@
     @include adaptiveValue("margin-bottom", 60, 30);
     align-items: center;
     position: relative;
-    @media (min-width: $mobile) {
-        gap: 100px;
-        display: inline-flex;
-    }
     display: flex;
     justify-content: space-between;
+    @media (min-width: $mobile) {
+        gap: rem(100);
+        display: inline-flex;
+    }
     &__line {
         position: absolute;
         top: 50%;
         left: 0;
         transform: translate(0, -50%);
         width: 100%;
-        height: 2px;
+        height: rem(2);
         background-color: $greyColor_3;
         z-index: -1;
         &_success {
-            transition: all 0.3s ease 0s;
+            transition: width 0.3s ease 0s;
             position: absolute;
             width: 0;
             height: 100%;
@@ -80,31 +66,33 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        transition: all 0.6s ease 0s;
-        height: 50px;
-        width: 50px;
-        flex: 0 0 50px;
+        height: rem(50);
+        width: rem(50);
+        flex: 0 0 rem(50);
         border-radius: 50%;
-        background: $lightColor;
-        border: 2px solid $lightBlue;
-        @media (max-width: $mobileSmall) {
-            width: 40px;
-            height: 40px;
-            flex: 0 0 40px;
-        }
-        svg {
-            transition: all 0.6s ease 0s;
-            fill: $greyColor_1;
+        background-color: $lightColor;
+        border: rem(2) solid $lightBlue;
+        transition: background-color 0.3s ease 0s, border 0.3s ease 0s;
+        &::before {
+            transition: color 0.3s ease 0.2s;
+            color: $greyColor_1;
             @media (max-width: $mobileSmall) {
                 transform: scale(0.9);
             }
         }
+
         &._active {
+            transition: background-color 0.3s ease 0.2s, border 0.3s ease 0.2s;
             background-color: $primaryColor;
-            border: 1px solid transparent;
-            svg {
-                fill: $lightColor;
+            border: rem(1) solid transparent;
+            &::before {
+                color: $lightColor;
             }
+        }
+        @media (max-width: $mobileSmall) {
+            width: rem(40);
+            height: rem(40);
+            flex: 0 0 rem(40);
         }
     }
 }
@@ -112,20 +100,11 @@
 //========================================================================================================================================================
 
 .hub-step {
-    &__top {
-    }
-
-    &__body {
-    }
-
-    &__label {
-    }
-
     &__grid {
-        max-width: 1120px;
+        max-width: rem(1120);
         display: grid;
         grid-template-columns: auto auto auto;
-        gap: 20px;
+        gap: rem(20);
         @media (max-width: $tablet) {
             grid-template-columns: auto auto;
         }
@@ -146,10 +125,10 @@
     }
 
     &__grid {
-        max-width: 1120px;
+        max-width: rem(1120);
         display: grid;
         grid-template-columns: auto auto auto;
-        gap: 20px;
+        gap: rem(20);
         @media (max-width: $tablet) {
             grid-template-columns: auto auto;
         }
@@ -168,33 +147,32 @@
 
     &__body {
         display: flex;
-        gap: 40px;
+        @include adaptiveValue("gap", 40, 30, 991.98, 767.98, 1);
         @media (max-width: $mobile) {
             flex-wrap: wrap;
-            gap: 30px;
         }
     }
 
     &__file {
-        flex: 0 0 360px;
-        height: 360px;
+        flex: 0 0 rem(360);
+        height: rem(360);
         background: $lightBlue;
-        border: 2px dashed $mainColor;
+        border: rem(2) dashed $mainColor;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 20px;
-        transition: all 0.3s ease 0s;
+        padding: rem(20);
         cursor: pointer;
+        transition: abackground-colorll 0.3s ease 0s;
         @media (any-hover: hover) {
             &:hover {
                 background-color: $greyColor_3;
             }
         }
         @media (max-width: $tablet) {
-            flex: 0 0 240px;
-            height: 240px;
+            flex: 0 0 rem(240);
+            height: rem(240);
         }
         @media (max-width: $mobile) {
             flex: 1 1 100%;
@@ -220,7 +198,7 @@
     }
 
     &__inputs {
-        flex: 0 1 720px;
+        flex: 0 1 rem(720);
         .input {
             max-width: none;
         }
@@ -231,7 +209,7 @@
 
     &__form {
         &:not(:last-child) {
-            margin-bottom: 10px;
+            margin-bottom: rem(10);
         }
         &:last-child {
             margin-bottom: rem(0);
@@ -248,7 +226,7 @@
 
     &__row {
         &:not(:last-child) {
-            margin-bottom: 30px;
+            margin-bottom: rem(30);
         }
     }
 
@@ -257,9 +235,9 @@
 
     &__elements {
         display: flex;
-        gap: 10px;
+        gap: rem(10);
         flex-wrap: wrap;
-        max-width: 1200px;
+        max-width: rem(1200);
     }
 
     &__item {
@@ -274,7 +252,7 @@
         opacity: 0;
         &:checked + .intrested-step__checkbox-text {
             color: $mainColor;
-            border: 1px solid $mainColor;
+            border: rem(1) solid $mainColor;
         }
     }
 
@@ -283,18 +261,18 @@
         font-size: rem(18);
         line-height: math.div(20, 18);
         color: $greyColor_1;
-        padding: 5px 25px;
-        min-height: 50px;
+        padding: rem(5) rem(25);
+        min-height: rem(50);
         background: $lightColor;
         display: inline-flex;
         justify-content: center;
         align-items: center;
         text-align: center;
-        transition: all 0.3s ease 0s;
-        border: 1px solid $greyColor_3;
+        border: rem(1) solid $greyColor_3;
+        transition: border 0.3s ease 0s;
         @media (any-hover: hover) {
             &:hover {
-                border: 1px solid $mainColor;
+                border: rem(1) solid $mainColor;
             }
         }
     }
@@ -306,36 +284,35 @@
 
     &__body {
         display: flex;
-        gap: 10px 0;
+        gap: rem(10) 0;
         @media (max-width: $mobile) {
             flex-direction: column;
         }
         @media (min-width: $mobile) {
             flex-wrap: wrap;
-            max-width: 920px;
-            margin: 0px -5px;
+            max-width: rem(920);
+            margin: 0px rem(-5);
         }
     }
 
     &__input {
+        margin-bottom: rem(0);
         @media (min-width: $mobile) {
-            padding: 0px 5px;
+            padding: 0px rem(5);
             flex: 0 1 50%;
         }
-
-        margin-bottom: rem(0);
     }
 
     &__textarea {
+        textarea {
+            height: rem(240);
+        }
         @media (min-width: $mobile) {
-            padding: 0px 5px;
+            padding: 0px rem(5);
             flex: 1 1 100%;
         }
         @media (max-width: $mobileSmall) {
             margin-bottom: rem(0);
-        }
-        textarea {
-            height: rem(240);
         }
     }
 }
@@ -344,14 +321,14 @@
 
 .finish-step {
     @media (min-width: $mobile) {
-        max-width: 600px;
+        max-width: rem(600);
     }
     &__image {
         margin: rem(40) 0;
+        max-width: rem(80);
         @media (max-width: $mobile) {
-            margin: 0px 0px 20px 0px;
+            margin: 0px 0px rem(20) 0px;
         }
-        max-width: 80px;
         img {
             max-width: 100%;
         }
@@ -373,12 +350,12 @@
     }
 
     &__button {
-        gap: 10px;
+        gap: rem(10);
         margin-top: rem(20);
-        min-width: 340px;
+        min-width: rem(340);
         @media (any-hover: hover) {
             &:hover {
-                border: 1px solid $primaryColor;
+                border: rem(1) solid $primaryColor;
                 color: $primaryColor;
                 svg {
                     fill: $primaryColor;

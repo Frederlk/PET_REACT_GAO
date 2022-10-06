@@ -64,3 +64,6 @@ npm i swiper
 npm i react-swipeable
 npm i date-fns
 npm i html-react-parser
+
+npm i uuid
+npm i npm i --save-dev @types/uuid

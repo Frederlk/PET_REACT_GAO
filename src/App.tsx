@@ -2,7 +2,6 @@ import { FC, Suspense } from "react";
 
 import { AppRouter, Spinner } from "./_components";
 import { useEventListener } from "./hooks";
-import { Footer, Header } from "./_containers";
 
 const App: FC = () => {
     useEventListener("scroll", function () {
@@ -16,15 +15,11 @@ const App: FC = () => {
     });
 
     return (
-        <>
-            <Header />
-            <main className="page">
-                <Suspense fallback={<Spinner />}>
-                    <AppRouter />
-                </Suspense>
-            </main>
-            <Footer />
-        </>
+        <main className="page">
+            <Suspense fallback={<Spinner />}>
+                <AppRouter />
+            </Suspense>
+        </main>
     );
 };
 

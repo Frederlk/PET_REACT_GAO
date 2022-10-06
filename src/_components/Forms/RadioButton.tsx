@@ -12,8 +12,8 @@ const RadioButton: FC<RadioButtonProps & FieldHookConfig<string>> = ({ children,
     return (
         <div className={`${className || ""} option`}>
             <input hidden id={field.value} type="radio" className="option__input" {...field} />
-            <label className="option__label" htmlFor={field.value}>
-                <span className="option__text">{children}</span>
+            <label className="option__label" tabIndex={0} htmlFor={field.value}>
+                {children}
             </label>
         </div>
     );

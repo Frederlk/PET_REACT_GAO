@@ -10,11 +10,6 @@
     }
 }
 
-//Percent
-@function percent($px, $from) {
-    $result: math.div($px, $from) * 100%;
-    @return $result;
-}
 //REM
 @function rem($px) {
     $result: math.div($px, 16) + rem;
@@ -24,21 +19,6 @@
 @function em($px, $current: 16) {
     $result: math.div($px, $current) + em;
     @return $result;
-}
-//Адаптивное свойство
-
-//Currency
-@mixin currency($sym) {
-    &::after {
-        content: "#{$sym}";
-    }
-}
-
-// Grids
-@mixin gridCards($type: fit, $min: 280px, $max: 1fr, $gap: 30px) {
-    display: grid;
-    gap: $gap;
-    grid-template-columns: repeat(auto-#{$type}, minmax($min, $max));
 }
 
 // Адаптивное свойство (clamp)
@@ -109,27 +89,6 @@
 }
 
 //========================================================================================================================================================
-@mixin inViewBasic($startPosX, $startPosY, $speed, $delay, $child: false) {
-    transform: translate($startPosX, $startPosY);
-    transition: transform #{$speed}s ease #{$delay}s, opacity #{$speed}s ease #{$delay}s;
-    opacity: 0;
-    visibility: hidden;
-    @if ($child == true) {
-        ._watcher-view & {
-            opacity: 1 !important ;
-            visibility: visible !important;
-            transform: translate(0, 0) !important;
-        }
-    } @else {
-        &._watcher-view {
-            opacity: 1 !important;
-            visibility: visible !important;
-            transform: translate(0, 0) !important;
-        }
-    }
-}
-
-//========================================================================================================================================================
 
 @mixin scrollbars(
     $size,
@@ -147,16 +106,16 @@
         background: $foreground-color;
         overflow: hidden;
         @if ($border) {
-            border-left: 2px solid $background-color;
-            border-right: 2px solid $background-color;
+            border-left: rem(2) solid $background-color;
+            border-right: rem(2) solid $background-color;
         }
     }
 
     &::-webkit-scrollbar-track {
         background: $background-color;
         @if ($border) {
-            border-left: 2px solid $background-color;
-            border-right: 2px solid $background-color;
+            border-left: rem(2) solid $background-color;
+            border-right: rem(2) solid $background-color;
         }
     }
 

@@ -11,45 +11,94 @@ textarea {
 
 .input-form {
     position: relative;
-    margin-bottom: rem(40);
-    .input-icon {
+    margin-bottom: rem(20);
+    &::before {
+        font-size: rem(20);
         position: absolute;
-        width: 20px;
-        height: 20px;
         top: 50%;
-        left: 30px;
+        left: rem(30);
         transform: translate(0px, -50%);
         @media (max-width: $mobileSmall) {
-            left: 10px;
+            left: rem(10);
         }
+    }
+    &__search {
+        position: absolute;
+        min-width: rem(290);
+        padding: rem(15);
+        top: 0;
+        left: 100%;
+        margin-left: rem(20);
+        background-color: $lightColor;
+        border: rem(1) solid $primaryColor;
+        box-shadow: 0px rem(1) rem(20) rgba(116, 120, 135, 0.1);
+        min-height: rem(60);
+        z-index: 2;
+        opacity: 0;
+        visibility: hidden;
+        transform: translate(rem(-20), 0px);
+        transition: opacity 0.3s ease 0s, visibility 0.3s ease 0s, transform 0.3s ease 0s;
+        max-height: rem(200);
+        overflow: auto;
+        @include scrollbars(rem(8), $primaryColor, $lightColor);
+        &._active {
+            visibility: visible;
+            opacity: 1;
+            transform: translate(0px, 0px);
+        }
+    }
+
+    &__item {
+        font-weight: 500;
+        line-height: math.div(22, 20);
+        font-size: rem(20);
+        cursor: pointer;
+        transition: color 0.3s ease 0s;
+        &:not(:last-child) {
+            margin-bottom: rem(5);
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                color: $primaryColor;
+            }
+        }
+    }
+
+    &__empty {
+        font-weight: 500;
+        line-height: math.div(22, 20);
+        font-size: rem(20);
+        color: $greyColor_1;
     }
 }
 
 .input {
-    min-height: 60px;
+    min-height: rem(60);
     width: 100%;
     display: block;
-    padding: 5px 30px 5px 65px;
+    padding: rem(5) rem(30) rem(5) rem(65);
     background-color: $lightColor;
-    border: 1px solid $greyColor_3;
+    border: rem(1) solid $greyColor_3;
     font-size: rem(18);
     line-height: math.div(20, 18);
+    transition: border 0.3s ease 0s, color 0.3s ease 0s;
     @media (max-width: $mobileSmall) {
-        padding: 5px 20px 5px 35px;
+        padding: rem(5) rem(20) rem(5) rem(35);
     }
     &:focus-visible {
         outline-offset: rem(-1);
-        outline: white solid rem(1);
+        outline: transparent solid rem(1);
     }
-    &._form-focus {
+    &:focus {
         color: $mainColor;
+        border: rem(1) solid $primaryColor;
     }
-    &._form-error {
+    &._error {
         color: $primaryColor;
     }
 }
 
 textarea.input {
     resize: none;
-    padding: 20px 30px;
+    padding: rem(20) rem(30);
 }

@@ -1,49 +1,51 @@
 .checkbox {
     position: relative;
 
-    // .checkbox__input
     &__input {
         position: absolute;
         width: 0;
         height: 0;
         opacity: 0;
-        &:focus + .checkbox__label:before {
+        &:focus + .checkbox__label {
+            border: rem(1) solid $primaryColor;
+            background-color: $lightColor;
+            box-shadow: 0px rem(10) rem(20) rgba(116, 120, 135, 0.1);
         }
         &:checked + .checkbox__label {
-            border: 1px solid $primaryColor;
+            border: rem(1) solid $primaryColor;
             background-color: $lightColor;
-            box-shadow: 0px 10px 20px rgba(116, 120, 135, 0.1);
+            box-shadow: 0px rem(10) rem(20) rgba(116, 120, 135, 0.1);
             .checkbox__icon {
                 opacity: 1;
             }
         }
         &:checked + .checkbox__label:after {
-            border: 1px solid $primaryColor;
+            border: rem(1) solid $primaryColor;
             background-color: $primaryColor;
         }
     }
-    // .checkbox__label
+
     &__label {
         width: 100%;
         position: relative;
         cursor: pointer;
         display: inline-flex;
         align-items: center;
-        gap: 20px;
-        padding: 10px 25px 10px 10px;
+        gap: rem(20);
+        padding: rem(10) rem(25) rem(10) rem(10);
         background-color: $lightBlue;
         cursor: pointer;
-        border: 1px solid transparent;
+        border: rem(1) solid transparent;
         transition: all 0.3s ease 0s;
         &:after {
             content: "";
-            flex: 0 0 30px;
-            width: 30px;
-            height: 30px;
+            flex: 0 0 rem(30);
+            width: rem(30);
+            height: rem(30);
             transition: all 0.3s ease 0s;
-            border: 1px solid $greyColor_3;
+            border: rem(1) solid $greyColor_3;
             background-color: $lightColor;
-            border-radius: 5px;
+            border-radius: rem(5);
         }
     }
 
@@ -52,15 +54,15 @@
         position: absolute;
         top: 50%;
         transform: translate(0px, -50%);
-        right: 30px;
+        right: rem(30);
         z-index: 2;
         opacity: 0;
     }
 
     &__img {
-        flex: 0 0 60px;
+        flex: 0 0 rem(60);
         background-color: $lightColor;
-        padding: 10px;
+        padding: rem(10);
         img {
             max-width: 100%;
         }
