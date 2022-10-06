@@ -1,16 +1,59 @@
 %ic {
-	font-family: "icons";
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+    font-family: "icons";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
-[class*="_icon-"] {
-	&:before {
-		@extend %ic;
-		display: block;
-	}
+
+[class^="_icon-"],
+[class*=" _icon-"] {
+    &:before,
+    &:after {
+        @extend %ic;
+        display: block;
+    }
+}
+
+._icon-tick:before {
+    content: "\e90b";
+}
+._icon-user:before {
+    content: "\e900";
+}
+._icon-user-tag:before {
+    content: "\e901";
+}
+._icon-arrow::after {
+    content: "\e902";
+}
+._icon-crown:before {
+    content: "\e903";
+}
+._icon-frame:before {
+    content: "\e904";
+}
+._icon-gallery:before {
+    content: "\e905";
+}
+._icon-google:before {
+    content: "\e906";
+}
+._icon-heart:before {
+    content: "\e907";
+}
+._icon-ln:before {
+    content: "\e908";
+}
+._icon-location:before {
+    content: "\e909";
+}
+._icon-search:before {
+    content: "\e90a";
+}
+._icon-tw:before {
+    content: "\e90c";
 }

@@ -1,27 +1,23 @@
-%logo {
+.logo {
     display: inline-flex;
-    margin-bottom: rem(90);
-    @include adaptiveValue("margin-bottom", 90, 60);
+    @include adaptiveValue("margin-bottom", 90, 60, 991.98, 479.98, 1);
     img {
         max-width: 100%;
     }
 }
-%title {
+.title {
     font-weight: 500;
-    font-size: rem(50);
+    @include adaptiveValue("font-size", 50, 40, 991.98, 767.98, 1);
     line-height: math.div(56, 50);
     margin-bottom: rem(10);
-    @media (max-width: $mobile) {
-        font-size: rem(40);
-    }
 }
-%text {
+.text {
     font-size: rem(20);
     line-height: math.div(22, 20);
     margin-bottom: rem(40);
     color: $greyColor_1;
 }
-%label {
+.label {
     font-weight: 500;
     line-height: math.div(28, 25);
     font-size: rem(25);

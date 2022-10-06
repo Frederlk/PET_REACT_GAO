@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-const FormPage: FC = () => {
+const RegistrationPage: FC = () => {
     return (
         <section className="form-page">
             <div className="form-page__container">
@@ -1096,4 +1096,4 @@ const FormPage: FC = () => {
     );
 };
 
-export default FormPage;
+export default RegistrationPage;
