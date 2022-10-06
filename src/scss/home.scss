@@ -1,0 +1,395 @@
+.form-page {
+    &__container {
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        padding: 40px 0px 50px 0px;
+    }
+
+    &__form {
+        flex: 1 1 auto;
+    }
+}
+
+//========================================================================================================================================================
+
+.form {
+    &__progress {
+    }
+
+    &__steps {
+    }
+
+    &__step {
+        display: none;
+        &._active {
+            display: block;
+        }
+    }
+
+    &__finish {
+        display: none;
+        &._active {
+            display: block;
+        }
+    }
+
+    &__buttons {
+    }
+
+    &__button {
+    }
+}
+
+//========================================================================================================================================================
+
+.progress {
+    @include adaptiveValue("margin-bottom", 60, 30);
+    align-items: center;
+    position: relative;
+    @media (min-width: $mobile) {
+        gap: 100px;
+        display: inline-flex;
+    }
+    display: flex;
+    justify-content: space-between;
+    &__line {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(0, -50%);
+        width: 100%;
+        height: 2px;
+        background-color: $greyColor_3;
+        z-index: -1;
+        &_success {
+            transition: all 0.3s ease 0s;
+            position: absolute;
+            width: 0;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: $primaryColor;
+        }
+    }
+
+    &__step {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.6s ease 0s;
+        height: 50px;
+        width: 50px;
+        flex: 0 0 50px;
+        border-radius: 50%;
+        background: $lightColor;
+        border: 2px solid $lightBlue;
+        @media (max-width: $mobileSmall) {
+            width: 40px;
+            height: 40px;
+            flex: 0 0 40px;
+        }
+        svg {
+            transition: all 0.6s ease 0s;
+            fill: $greyColor_1;
+            @media (max-width: $mobileSmall) {
+                transform: scale(0.9);
+            }
+        }
+        &._active {
+            background-color: $primaryColor;
+            border: 1px solid transparent;
+            svg {
+                fill: $lightColor;
+            }
+        }
+    }
+}
+
+//========================================================================================================================================================
+
+.hub-step {
+    &__top {
+    }
+
+    &__body {
+    }
+
+    &__label {
+    }
+
+    &__grid {
+        max-width: 1120px;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 20px;
+        @media (max-width: $tablet) {
+            grid-template-columns: auto auto;
+        }
+        @media (max-width: $mobile) {
+            grid-template-columns: auto;
+        }
+    }
+}
+
+.objective-step {
+    &__top {
+    }
+
+    &__body {
+    }
+
+    &__label {
+    }
+
+    &__grid {
+        max-width: 1120px;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 20px;
+        @media (max-width: $tablet) {
+            grid-template-columns: auto auto;
+        }
+        @media (max-width: $mobile) {
+            grid-template-columns: auto;
+        }
+    }
+
+    &__checkbox-item {
+    }
+}
+
+.profile-step {
+    &__top {
+    }
+
+    &__body {
+        display: flex;
+        gap: 40px;
+        @media (max-width: $mobile) {
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+    }
+
+    &__file {
+        flex: 0 0 360px;
+        height: 360px;
+        background: $lightBlue;
+        border: 2px dashed $mainColor;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        transition: all 0.3s ease 0s;
+        cursor: pointer;
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $greyColor_3;
+            }
+        }
+        @media (max-width: $tablet) {
+            flex: 0 0 240px;
+            height: 240px;
+        }
+        @media (max-width: $mobile) {
+            flex: 1 1 100%;
+        }
+    }
+
+    &__file-input {
+        display: none;
+    }
+
+    &__image {
+        max-width: 100%;
+        margin-bottom: rem(30);
+    }
+
+    &__file-text {
+        font-weight: 500;
+        font-size: rem(20);
+        line-height: math.div(22, 20);
+    }
+
+    &__label {
+    }
+
+    &__inputs {
+        flex: 0 1 720px;
+        .input {
+            max-width: none;
+        }
+        @media (max-width: $mobile) {
+            flex: 1 1 100%;
+        }
+    }
+
+    &__form {
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+        &:last-child {
+            margin-bottom: rem(0);
+        }
+    }
+}
+
+.intrested-step {
+    &__top {
+    }
+
+    &__body {
+    }
+
+    &__row {
+        &:not(:last-child) {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__label {
+    }
+
+    &__elements {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        max-width: 1200px;
+    }
+
+    &__item {
+        cursor: pointer;
+        position: relative;
+    }
+
+    &__checkbox {
+        position: absolute;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        &:checked + .intrested-step__checkbox-text {
+            color: $mainColor;
+            border: 1px solid $mainColor;
+        }
+    }
+
+    &__checkbox-text {
+        font-weight: 500;
+        font-size: rem(18);
+        line-height: math.div(20, 18);
+        color: $greyColor_1;
+        padding: 5px 25px;
+        min-height: 50px;
+        background: $lightColor;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        transition: all 0.3s ease 0s;
+        border: 1px solid $greyColor_3;
+        @media (any-hover: hover) {
+            &:hover {
+                border: 1px solid $mainColor;
+            }
+        }
+    }
+}
+
+.about-step {
+    &__top {
+    }
+
+    &__body {
+        display: flex;
+        gap: 10px 0;
+        @media (max-width: $mobile) {
+            flex-direction: column;
+        }
+        @media (min-width: $mobile) {
+            flex-wrap: wrap;
+            max-width: 920px;
+            margin: 0px -5px;
+        }
+    }
+
+    &__input {
+        @media (min-width: $mobile) {
+            padding: 0px 5px;
+            flex: 0 1 50%;
+        }
+
+        margin-bottom: rem(0);
+    }
+
+    &__textarea {
+        @media (min-width: $mobile) {
+            padding: 0px 5px;
+            flex: 1 1 100%;
+        }
+        @media (max-width: $mobileSmall) {
+            margin-bottom: rem(0);
+        }
+        textarea {
+            height: rem(240);
+        }
+    }
+}
+
+//========================================================================================================================================================
+
+.finish-step {
+    @media (min-width: $mobile) {
+        max-width: 600px;
+    }
+    &__image {
+        margin: rem(40) 0;
+        @media (max-width: $mobile) {
+            margin: 0px 0px 20px 0px;
+        }
+        max-width: 80px;
+        img {
+            max-width: 100%;
+        }
+    }
+
+    &__title {
+    }
+
+    &__text {
+        p {
+            &:not(:last-child) {
+                margin-bottom: rem(10);
+            }
+        }
+    }
+
+    &__label {
+        margin-bottom: rem(10);
+    }
+
+    &__button {
+        gap: 10px;
+        margin-top: rem(20);
+        min-width: 340px;
+        @media (any-hover: hover) {
+            &:hover {
+                border: 1px solid $primaryColor;
+                color: $primaryColor;
+                svg {
+                    fill: $primaryColor;
+                }
+            }
+        }
+        @media (max-width: $mobileSmall) {
+            min-width: 0;
+            svg {
+                display: none;
+            }
+        }
+    }
+}
