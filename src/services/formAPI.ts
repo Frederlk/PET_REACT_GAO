@@ -1,7 +1,6 @@
-import { IHub } from "./../models/models";
 import { db } from "../firebaseConfig";
 import { createApi, fakeBaseQuery } from "@reduxjs/toolkit/query/react";
-import { collection, doc, getDoc, getDocs, setDoc } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 
 export const formAPI = createApi({
     reducerPath: "formAPI",
@@ -10,10 +9,10 @@ export const formAPI = createApi({
         getData: build.query({
             async queryFn(label: string) {
                 try {
-                    const data: IHub[] = [];
+                    const data: any = [];
                     const querySnapshot = await getDocs(collection(db, label));
                     querySnapshot?.forEach((doc) => {
-                        data.push(doc.data() as IHub);
+                        data.push(doc.data());
                     });
 
                     return { data: data };

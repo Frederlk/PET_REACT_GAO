@@ -16,12 +16,12 @@
             background-color: $lightColor;
             box-shadow: 0px rem(10) rem(20) rgba(116, 120, 135, 0.1);
             .checkbox__icon {
-                opacity: 1;
+                border: rem(1) solid $primaryColor;
+                background-color: $primaryColor;
+                &::before {
+                    opacity: 1;
+                }
             }
-        }
-        &:checked + .checkbox__label:after {
-            border: rem(1) solid $primaryColor;
-            background-color: $primaryColor;
         }
     }
 
@@ -32,35 +32,41 @@
         display: inline-flex;
         align-items: center;
         gap: rem(20);
-        padding: rem(10) rem(25) rem(10) rem(10);
+        padding: rem(9) rem(25) rem(9) rem(10);
         background-color: $lightBlue;
         cursor: pointer;
         border: rem(1) solid transparent;
-        transition: all 0.3s ease 0s;
-        &:after {
-            content: "";
-            flex: 0 0 rem(30);
-            width: rem(30);
-            height: rem(30);
-            transition: all 0.3s ease 0s;
-            border: rem(1) solid $greyColor_3;
-            background-color: $lightColor;
-            border-radius: rem(5);
+        transition: border 0.3s ease 0s, background-color 0.3s ease 0s, box-shadow 0.3s ease 0s;
+        min-height: rem(80);
+        @media (max-width: $mobileSmall) {
+            padding-right: rem(10);
+            gap: rem(10);
         }
     }
 
     &__icon {
-        transition: all 0.3s ease 0s;
-        position: absolute;
-        top: 50%;
-        transform: translate(0px, -50%);
-        right: rem(30);
+        transition: border 0.3s ease 0s, background-color 0.3s ease 0s;
+        flex: 0 0 rem(30);
+        width: rem(30);
+        height: rem(30);
+        border: rem(1) solid $greyColor_3;
+        background-color: $lightColor;
+        border-radius: rem(5);
         z-index: 2;
-        opacity: 0;
+        color: $lightColor;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &::before {
+            opacity: 0;
+            transition: opacity 0.3s ease 0s;
+        }
     }
 
     &__img {
         flex: 0 0 rem(60);
+        width: rem(60);
+        height: rem(60);
         background-color: $lightColor;
         padding: rem(10);
         img {
@@ -73,5 +79,6 @@
         font-weight: 500;
         line-height: math.div(22, 20);
         font-size: rem(20);
+        margin-right: rem(-3);
     }
 }

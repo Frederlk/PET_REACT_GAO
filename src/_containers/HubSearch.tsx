@@ -1,11 +1,12 @@
-import { ChangeEvent, FC, useMemo, useState, memo, useRef } from "react";
+import { ChangeEvent, FC, useMemo, useState, memo, useRef, useContext } from "react";
 import useOnClickOutside from "../hooks/useClickOutside";
 import useDebounce from "../hooks/useDebounce";
 import { IHub } from "../models/models";
-import RadioButton from "./Forms/RadioButton";
-import Picture from "./Picture";
+import { FormContext } from "./Form";
+import RadioButton from "../_components/Forms/RadioButton";
+import Picture from "../_components/Picture";
 
-const Search: FC<{ data: any[] | undefined }> = ({ data }) => {
+const HubSearch: FC<{ hubs: IHub[] | undefined }> = ({ hubs }) => {
     const [search, setSearch] = useState("");
     const [chosedData, setChosedData] = useState<IHub | null>(null);
     const debouncedSearch = useDebounce(search);
@@ -18,11 +19,27 @@ const Search: FC<{ data: any[] | undefined }> = ({ data }) => {
         setSearch(e.target.value);
     };
 
+    const setFieldValue = useContext(FormContext);
+
     const searchedItems = useMemo(() => {
-        const res = data
+        const onHandleAdd = (popular: boolean, item: IHub) => {
+            if (popular) {
+                setFieldValue("hub", item.title);
+            } else {
+                setChosedData(item);
+            }
+        };
+
+        const res = hubs
             ?.filter(({ title }) => title.toLowerCase().includes(debouncedSearch.toLowerCase()))
             .map((item, i) => (
-                <li key={item.title + i} onClick={() => setChosedData(item)} className="input-form__item">
+                <li
+                    key={item.title + i}
+                    onClick={() => onHandleAdd(item.popular, item)}
+                    onKeyDown={(e) => e.key === "Enter" && onHandleAdd(item.popular, item)}
+                    className="input-form__item"
+                    tabIndex={0}
+                >
                     {item.title}
                 </li>
             ));
@@ -34,7 +51,7 @@ const Search: FC<{ data: any[] | undefined }> = ({ data }) => {
 
     return (
         <>
-            <div className="top__input input-form _icon-search">
+            <div ref={resultRef} className="top__input input-form _icon-search">
                 <input
                     autoComplete="off"
                     name="searchHub"
@@ -43,7 +60,7 @@ const Search: FC<{ data: any[] | undefined }> = ({ data }) => {
                     className="input-form__input input"
                     onChange={onHandleInput}
                 />
-                <ul ref={resultRef} className={`input-form__search ${show ? "_active" : ""}`}>
+                <ul className={`input-form__search ${show ? "_active" : ""}`}>
                     {searchedItems && searchedItems?.length > 0 ? (
                         searchedItems
                     ) : (
@@ -67,4 +84,4 @@ const Search: FC<{ data: any[] | undefined }> = ({ data }) => {
     );
 };
 
-export default memo(Search);
+export default memo(HubSearch);
