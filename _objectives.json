@@ -1,0 +1,62 @@
+[
+    {
+        "img": "https://firebasestorage.googleapis.com/v0/b/react-pet-gao.appspot.com/o/objectives%2Fbrain.png?alt=media&token=72ad5c62-872a-412b-8965-062299f52caf",
+        "webp": "https://firebasestorage.googleapis.com/v0/b/react-pet-gao.appspot.com/o/objectives%2Fbrain.webp?alt=media&token=540651aa-3c91-495f-90ab-4cdc8152eb62",
+        "title": "Brainstorm with peers"
+    },
+    {
+        "img": "https://firebasestorage.googleapis.com/v0/b/react-pet-gao.appspot.com/o/objectives%2Fteam.png?alt=media&token=583cb301-124b-464a-b6f6-a1e157b10017",
+        "webp": "https://firebasestorage.googleapis.com/v0/b/react-pet-gao.appspot.com/o/objectives%2Fteam.webp?alt=media&token=aab2f444-a34e-4f84-bc56-a1437bd515eb",
+        "title": "Grow your team"
+    },
+    {
+        "img": "https://firebasestorage.googleapis.com/v0/b/react-pet-gao.appspot.com/o/objectives%2Fcompany.png?alt=media&token=1340f862-259a-4495-ae8e-5cc57f94f798",
+        "webp": "https://firebasestorage.googleapis.com/v0/b/react-pet-gao.appspot.com/o/objectives%2Fcompany.webp?alt=media&token=12a1e4a0-a923-45b4-84ab-d430b787dd75",
+        "title": "Start a company"
+    },
+    {
+        "img": "https://firebasestorage.googleapis.com/v0/b/react-pet-gao.appspot.com/o/objectives%2Fplanet.png?alt=media&token=4a3cb911-befa-4b78-a9ea-4ea6209716b8",
+        "webp": "https://firebasestorage.googleapis.com/v0/b/react-pet-gao.appspot.com/o/objectives%2Fplanet.webp?alt=media&token=ecab4c32-5295-4da9-b07e-2fb2fbd06af7",
+        "title": "Explore other companies"
+    },
+    {
+        "img": "https://firebasestorage.googleapis.com/v0/b/react-pet-gao.appspot.com/o/objectives%2Frocket.png?alt=media&token=f9a024c3-3163-4ad5-ad8a-67ea8f5f35bc",
+        "webp": "https://firebasestorage.googleapis.com/v0/b/react-pet-gao.appspot.com/o/objectives%2Frocket.webp?alt=media&token=83bab9c4-6a8d-44e8-be18-8ecfee742aa8",
+        "title": "Business development"
+    },
+    {
+        "img": "https://firebasestorage.googleapis.com/v0/b/react-pet-gao.appspot.com/o/objectives%2Finvest.png?alt=media&token=1f5a0a87-f4a1-461a-9f67-4e0d71c901ad",
+        "webp": "https://firebasestorage.googleapis.com/v0/b/react-pet-gao.appspot.com/o/objectives%2Finvest.webp?alt=media&token=961adf75-21ed-4802-b7c3-1f687e117add",
+        "title": "Invest"
+    },
+    {
+        "img": "https://firebasestorage.googleapis.com/v0/b/react-pet-gao.appspot.com/o/objectives%2Ftime.png?alt=media&token=76e48d63-d752-4979-b45d-0b2d61e140a8",
+        "webp": "https://firebasestorage.googleapis.com/v0/b/react-pet-gao.appspot.com/o/objectives%2Ftime.webp?alt=media&token=07d2cf6d-ac4a-46b6-8838-1c05262524f8",
+        "title": "Explore new projects"
+    },
+    {
+        "img": "https://firebasestorage.googleapis.com/v0/b/react-pet-gao.appspot.com/o/objectives%2Fmentor.png?alt=media&token=381282ba-bfd1-4974-8986-f3b0ebc1d965",
+        "webp": "https://firebasestorage.googleapis.com/v0/b/react-pet-gao.appspot.com/o/objectives%2Fmentor.webp?alt=media&token=b1b3a5d0-a439-4411-be03-af9bec2bedb6",
+        "title": "Mentor others"
+    },
+    {
+        "img": "https://firebasestorage.googleapis.com/v0/b/react-pet-gao.appspot.com/o/objectives%2Fevents.png?alt=media&token=05430bff-1ecb-4760-8e44-0bf86bcc5c68",
+        "webp": "https://firebasestorage.googleapis.com/v0/b/react-pet-gao.appspot.com/o/objectives%2Fevents.webp?alt=media&token=9b56cbf5-5961-48c3-9901-e3b61df29c60",
+        "title": "Organize events"
+    },
+    {
+        "img": "https://firebasestorage.googleapis.com/v0/b/react-pet-gao.appspot.com/o/objectives%2Fraise.png?alt=media&token=7adca26d-6c2e-4d0c-9d8c-921f792361af",
+        "webp": "https://firebasestorage.googleapis.com/v0/b/react-pet-gao.appspot.com/o/objectives%2Fraise.webp?alt=media&token=8d09a68b-f0be-48f0-a060-db878d818fe9",
+        "title": "Raise funding"
+    },
+    {
+        "img": "https://firebasestorage.googleapis.com/v0/b/react-pet-gao.appspot.com/o/objectives%2Fcofounder.png?alt=media&token=da3fdde4-90ad-4cdc-9e4b-dc9cb5b8064c",
+        "webp": "https://firebasestorage.googleapis.com/v0/b/react-pet-gao.appspot.com/o/objectives%2Fcofounder.webp?alt=media&token=34c7a3c5-e2ca-4443-bfc3-b386931d2a27",
+        "title": "Find a cofounder"
+    },
+    {
+        "img": "https://firebasestorage.googleapis.com/v0/b/react-pet-gao.appspot.com/o/objectives%2Fpeople.png?alt=media&token=4011e7c9-dcff-4c8e-a0af-6cf5f6a4e8cd",
+        "webp": "https://firebasestorage.googleapis.com/v0/b/react-pet-gao.appspot.com/o/objectives%2Fpeople.webp?alt=media&token=3f50ec01-a1df-4aef-aab5-a329195daa1f",
+        "title": "Meet intresting people"
+    }
+]

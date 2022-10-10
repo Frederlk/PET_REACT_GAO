@@ -1,28 +1,41 @@
-import { FC, useMemo, useEffect, Fragment } from "react";
+import { FC, useMemo, useEffect, Fragment, createContext } from "react";
 import { FinalStep, Progress } from ".";
 import { Formik, Form as FormikForm } from "formik";
 import { steps } from "../constants/data";
 import { useAppSelector } from "../hooks/useRedux";
+import { object, string } from "yup";
+import { urlRegex } from "../constants/regs";
 
 interface IInitialValues {
     hub: string;
-    searchHub: string;
     objectives: string[];
     profilePic: string;
     linkedInUrl: string;
     twitterUrl: string;
     interests: string[];
+    firstName: string;
+    lastName: string;
+    about: string;
 }
 
 const initialValues: IInitialValues = {
     hub: "",
-    searchHub: "",
     objectives: [],
     profilePic: "",
     linkedInUrl: "",
     twitterUrl: "",
     interests: [],
+    firstName: "",
+    lastName: "",
+    about: "",
 };
+
+const validationSchema = object().shape({
+    linkedInUrl: string().matches(urlRegex, "URL is not valid"),
+    twitterUrl: string().matches(urlRegex, "URL is not valid"),
+});
+
+export const FormContext = createContext<any>(null);
 
 const Form: FC = () => {
     const stepsItems = useMemo(
@@ -38,18 +51,22 @@ const Form: FC = () => {
     return (
         <Formik
             initialValues={initialValues}
-            // validationSchema={validationSchema}
+            validationSchema={validationSchema}
             onSubmit={(values, { resetForm }) => {
-                resetForm();
+                console.log(values);
             }}
         >
-            <FormikForm className="form-page__form form">
-                <Progress />
+            {({ values, handleSubmit, setFieldValue }) => (
+                <FormContext.Provider value={setFieldValue}>
+                    <FormikForm className="form-page__form form">
+                        <Progress />
 
-                {stepsItems}
+                        {stepsItems}
 
-                <FinalStep />
-            </FormikForm>
+                        <FinalStep />
+                    </FormikForm>
+                </FormContext.Provider>
+            )}
         </Formik>
     );
 };

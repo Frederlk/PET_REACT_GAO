@@ -15,9 +15,8 @@ textarea {
     &::before {
         font-size: rem(20);
         position: absolute;
-        top: 50%;
+        top: rem(20);
         left: rem(30);
-        transform: translate(0px, -50%);
         @media (max-width: $mobileSmall) {
             left: rem(10);
         }
@@ -30,7 +29,7 @@ textarea {
         left: 100%;
         margin-left: rem(20);
         background-color: $lightColor;
-        border: rem(1) solid $primaryColor;
+        border: rem(1) solid $greyColor_1;
         box-shadow: 0px rem(1) rem(20) rgba(116, 120, 135, 0.1);
         min-height: rem(60);
         z-index: 2;
@@ -41,6 +40,13 @@ textarea {
         max-height: rem(200);
         overflow: auto;
         @include scrollbars(rem(8), $primaryColor, $lightColor);
+        @media (max-width: $tablet) {
+            left: 0;
+            top: 100%;
+            margin-left: 0;
+            margin-top: rem(10);
+            transform: translate(0, rem(-20));
+        }
         &._active {
             visibility: visible;
             opacity: 1;
