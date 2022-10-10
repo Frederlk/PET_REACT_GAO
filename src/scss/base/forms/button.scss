@@ -25,12 +25,15 @@
     transition: border 0.3s ease 0s, background-color 0.3s ease 0s, color 0.3s ease 0s;
     gap: rem(40);
     min-width: rem(140);
+    &::before {
+        font-size: rem(24);
+    }
     @media (max-width: $mobileSmall) {
         width: 100%;
     }
     @media (any-hover: hover) {
         &:hover {
-            background: $lightColor;
+            background-color: $lightColor;
             border: rem(1) solid $greyColor_3;
             color: $mainColor;
         }
@@ -39,7 +42,7 @@
     //========================================================================================================================================================
 
     &_outline {
-        background: $lightColor;
+        background-color: $lightColor;
         border: rem(1) solid $greyColor_3;
         color: $mainColor;
         @media (any-hover: hover) {
@@ -49,5 +52,9 @@
                 color: $lightColor;
             }
         }
+    }
+
+    &._hide {
+        display: none;
     }
 }

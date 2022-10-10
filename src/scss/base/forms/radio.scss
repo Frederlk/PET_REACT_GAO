@@ -3,10 +3,7 @@
     cursor: pointer;
 
     &__input {
-        width: 0;
-        height: 0;
-        opacity: 0;
-        position: absolute;
+        @extend %visually-hidden;
         &:checked + .option__label {
             border: rem(1) solid $primaryColor;
             background-color: $lightColor;
@@ -15,8 +12,13 @@
             border: rem(1) solid $primaryColor;
         }
         &:checked + .option__label:after {
-            transform: translate(0, -50%);
             opacity: 1;
+        }
+        &:focus + .option__label {
+            outline: transparent solid rem(1);
+            border: rem(1) solid $primaryColor;
+            background-color: $lightColor;
+            box-shadow: 0px rem(1) rem(20) rgba(116, 120, 135, 0.1);
         }
     }
 
@@ -32,6 +34,7 @@
         border: rem(1) solid transparent;
         transition: border 0.3s ease 0s, background-color 0.3s ease 0s, box-shadow 0.3s ease 0s;
         min-height: rem(80);
+        position: relative;
         &:before {
             content: "";
             width: rem(30);
@@ -45,21 +48,13 @@
         &:after {
             content: "";
             transition: transform 0.3s ease 0s, opacity 0.3s ease 0s;
-            transform: translate(0, -50%);
             width: rem(20);
             height: rem(20);
             border-radius: 50%;
             background-color: $primaryColor;
             position: absolute;
-            right: rem(31);
-            top: 50%;
+            right: rem(30);
             opacity: 0;
-        }
-        &:focus {
-            outline: transparent solid rem(1);
-            border: rem(1) solid $primaryColor;
-            background-color: $lightColor;
-            box-shadow: 0px rem(1) rem(20) rgba(116, 120, 135, 0.1);
         }
     }
 

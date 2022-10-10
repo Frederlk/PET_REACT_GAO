@@ -1,35 +1,38 @@
-import { ChangeEvent, FC, useState } from "react";
+import { ChangeEvent, FC, memo, useCallback, useContext, useState } from "react";
 import { stepsNames } from "../../constants/data";
 import { useAppSelector } from "../../hooks/useRedux";
 import { storage } from "../../firebaseConfig";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { v4 } from "uuid";
-import { Input, Picture } from "../../_components";
-import { Field } from "formik";
-
-// const validationSchema = object().shape({
-//     linkedInUrl: string().matches(urlRegex, "URL is not valid"),
-//     twitterUrl: string().matches(urlRegex, "URL is not valid"),
-// });
+import { Input, Picture, Spinner } from "../../_components";
+import { FormContext } from "../Form";
 
 const ProfileStep: FC = () => {
     const { step } = useAppSelector((state) => state.steps);
     const [pic, setPic] = useState<string | null>(null);
+    const [isLoading, setIsLoading] = useState(false);
 
-    const onImageUpload = (e: ChangeEvent<HTMLInputElement>) => {
+    const { setFieldValue } = useContext(FormContext);
+
+    const onImageUpload = useCallback((e: ChangeEvent<HTMLInputElement>) => {
         if (e.target.files) {
             const img = e.target.files[0];
-            const imageRef = ref(storage, `profileImages/${img.name + v4()}`);
-            uploadBytes(imageRef, img).then((snapshot) => {
-                getDownloadURL(snapshot.ref).then((url) => {
-                    setPic(url);
+            if (img) {
+                setIsLoading(true);
+                const imageRef = ref(storage, `profileImages/${img.name + v4()}`);
+                uploadBytes(imageRef, img).then((snapshot) => {
+                    getDownloadURL(snapshot.ref).then((url) => {
+                        setPic(url);
+                        setFieldValue("profilePic", url);
+                    });
+                    setIsLoading(false);
                 });
-            });
+            }
         }
-    };
+    }, []);
 
     return (
-        <div className={`form__step profile-step ${step === stepsNames.PROFILE ? "_active" : ""}`}>
+        <div className={`step profile-step ${step === stepsNames.PROFILE ? "_active" : ""}`}>
             <div className="top">
                 <h3 className="title">Fill Your Profile</h3>
                 <p className="text">
@@ -38,19 +41,21 @@ const ProfileStep: FC = () => {
                 </p>
             </div>
             <div className="profile-step__body">
-                <label className="profile-step__file">
-                    <Field
+                <label className={`profile-step__file ${isLoading ? "_loading" : ""}`}>
+                    <input
                         type="file"
                         name="profilePic"
                         className="profile-step__file-input"
                         onChange={onImageUpload}
                     />
-                    {pic && (
-                        <div className="profile-step__image-ibg ">
-                            <Picture srcWebp={pic} fallbackSrc={pic} alt="Profile Pic" />
-                        </div>
-                    )}
-                    <p className="profile-step__file-text _icon-gallery">Upload Your Photo</p>
+                    <div className="profile-step__image-ibg">
+                        {isLoading ? (
+                            <Spinner />
+                        ) : (
+                            pic && <Picture srcWebp={pic} fallbackSrc={pic} alt="Profile Pic" />
+                        )}
+                    </div>
+                    {!isLoading && <p className="profile-step__file-text _icon-gallery">Upload Your Photo</p>}
                 </label>
                 <div className="profile-step__inputs">
                     <div className="profile-step__label label">Other Profile</div>
@@ -78,4 +83,4 @@ const ProfileStep: FC = () => {
     );
 };
 
-export default ProfileStep;
+export default memo(ProfileStep);

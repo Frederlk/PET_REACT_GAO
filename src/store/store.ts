@@ -1,14 +1,12 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { formAPI } from "../services/formAPI";
 
-import { bodyLockReducer } from "./slices/bodyLock/bodyLock.slice";
-import { menuReducer } from "./slices/menu/menu.slice";
 import { stepsReducer } from "./slices/steps/steps.slice";
+import { userReducer } from "./user/user.slice";
 
 const rootReducer = combineReducers({
-    bodyLock: bodyLockReducer,
-    menu: menuReducer,
     steps: stepsReducer,
+    user: userReducer,
     [formAPI.reducerPath]: formAPI.reducer,
 });
 

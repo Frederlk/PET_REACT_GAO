@@ -5,6 +5,8 @@
         min-height: 100vh;
         @include adaptiveValue("padding-top", 40, 30, 1520, 479.98, 1);
         @include adaptiveValue("padding-bottom", 50, 30, 1520, 479.98, 1);
+        .finish-step {
+        }
     }
 
     &__form {
@@ -14,19 +16,10 @@
 
 //========================================================================================================================================================
 
-.form {
-    &__step {
-        display: none;
-        &._active {
-            display: block;
-        }
-    }
-
-    &__finish {
-        display: none;
-        &._active {
-            display: block;
-        }
+.step {
+    display: none;
+    &._active {
+        display: block;
     }
 }
 
@@ -111,8 +104,6 @@
     &__file {
         flex: 0 0 rem(360);
         height: rem(360);
-        background-color: $lightBlue;
-        border: rem(2) dashed $mainColor;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -123,7 +114,6 @@
         position: relative;
         @media (any-hover: hover) {
             &:hover {
-                border: rem(2) dashed $greyColor_1;
                 background-color: $greyColor_3;
             }
         }
@@ -137,7 +127,12 @@
     }
 
     &__file-input {
-        display: none;
+        @extend %visually-hidden;
+        &:focus + .profile-step__image-ibg {
+            outline: transparent solid rem(1);
+            border: rem(2) dashed $primaryColor;
+            box-shadow: 0px rem(1) rem(20) rgba(116, 120, 135, 0.1);
+        }
     }
 
     &__image-ibg {
@@ -146,16 +141,39 @@
         height: 100%;
         top: 0;
         left: 0;
+        border: rem(2) dashed $mainColor;
+        transition: background-color 0.3s ease 0s, border 0.3s ease 0s;
+        @media (any-hover: hover) {
+            &:hover {
+                border: rem(2) dashed $greyColor_1;
+            }
+        }
+        ._loading & {
+            .spinner {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
     }
 
     &__file-text {
         font-weight: 500;
         font-size: rem(20);
         line-height: math.div(22, 20);
+        transition: opacity 0.3s ease 0s;
         &::before {
             margin-bottom: rem(30);
             font-size: rem(60);
             text-align: center;
+        }
+        ._loading & {
+            opacity: 0;
         }
     }
 
@@ -214,6 +232,9 @@
             color: $mainColor;
             border: rem(1) solid $mainColor;
         }
+        &:focus + .intrested-step__checkbox-text {
+            border: rem(1) solid $primaryColor;
+        }
     }
 
     &__checkbox-text {
@@ -234,6 +255,9 @@
             &:hover {
                 border: rem(1) solid $mainColor;
             }
+        }
+        @media (max-width: $mobileSmall) {
+            padding: rem(5) rem(15);
         }
     }
 }
@@ -279,13 +303,14 @@
 
 //========================================================================================================================================================
 
-.finish-step {
+.final {
     @media (min-width: $mobile) {
         max-width: rem(600);
     }
     &__image {
         margin: rem(40) 0;
         max-width: rem(80);
+        min-height: rem(80);
         @media (max-width: $mobile) {
             margin: 0px 0px rem(20) 0px;
         }
@@ -298,6 +323,7 @@
     }
 
     &__text {
+        margin-bottom: rem(40);
         p {
             &:not(:last-child) {
                 margin-bottom: rem(10);
@@ -317,14 +343,11 @@
             &:hover {
                 border: rem(1) solid $primaryColor;
                 color: $primaryColor;
-                svg {
-                    fill: $primaryColor;
-                }
             }
         }
         @media (max-width: $mobileSmall) {
             min-width: 0;
-            svg {
+            &::before {
                 display: none;
             }
         }

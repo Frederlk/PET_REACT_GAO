@@ -19,7 +19,7 @@ const HubSearch: FC<{ hubs: IHub[] | undefined }> = ({ hubs }) => {
         setSearch(e.target.value);
     };
 
-    const setFieldValue = useContext(FormContext);
+    const { setFieldValue } = useContext(FormContext);
 
     const searchedItems = useMemo(() => {
         const onHandleAdd = (popular: boolean, item: IHub) => {

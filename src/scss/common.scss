@@ -14,7 +14,6 @@
 .text {
     font-size: rem(20);
     line-height: math.div(22, 20);
-    margin-bottom: rem(40);
     color: $greyColor_1;
 }
 .label {
@@ -28,20 +27,20 @@
 
 .top {
     position: relative;
+    margin-bottom: rem(40);
     @media (min-width: $mobile) {
         max-width: rem(600);
     }
-    &__title {
-    }
-
-    &__text {
-    }
 
     &__input {
+        margin-top: rem(40);
     }
 
     &__chosed {
         margin-bottom: rem(20);
+    }
+
+    ._form-error {
     }
 }
 
@@ -63,8 +62,11 @@
 .page404 {
     @include adaptiveValue("padding-top", 70, 30, 1520, 479.98, 1);
     @include adaptiveValue("padding-bottom", 60, 30, 1520, 479.98, 1);
-
     &__container {
+    }
+
+    .text {
+        margin-bottom: rem(40);
     }
 
     &__button {
@@ -81,7 +83,7 @@
     text-align: center;
     margin: rem(100) auto;
     @include adaptiveValue("width", 400, 150, 991.98, 479.98, 1);
-    @include adaptiveValue("heigth", 300, 150, 991.98, 479.98, 1);
+    @include adaptiveValue("height", 300, 150, 991.98, 479.98, 1);
     max-width: 60%;
     svg {
         max-width: 100%;

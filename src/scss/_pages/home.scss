@@ -34,13 +34,11 @@
 
     &__top {
         flex: 1 1 auto;
-        *:last-child {
-            margin: 0;
-        }
     }
 
     &__button {
         min-width: rem(250);
+        margin-top: rem(40);
         @media (max-width: $mobileSmall) {
             width: 100%;
         }

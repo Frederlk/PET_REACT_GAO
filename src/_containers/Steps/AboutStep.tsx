@@ -7,7 +7,7 @@ const AboutStep: FC = () => {
     const { step } = useAppSelector((state) => state.steps);
 
     return (
-        <div className={`form__step about-step ${step === stepsNames.ABOUT ? "_active" : ""}`}>
+        <div className={`step about-step ${step === stepsNames.ABOUT ? "_active" : ""}`}>
             <div className="about-step__top top">
                 <h3 className="top__title title">Tell Us About Your Self</h3>
                 <p className="top__text text">Select from the list and add your own interests.</p>

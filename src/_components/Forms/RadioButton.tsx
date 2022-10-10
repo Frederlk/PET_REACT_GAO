@@ -10,12 +10,10 @@ const RadioButton: FC<RadioButtonProps & FieldHookConfig<string>> = ({ children,
     const [field] = useField({ ...props, type: "radio" });
 
     return (
-        <div className={`${className || ""} option`}>
-            <input hidden id={field.value} type="radio" className="option__input" {...field} />
-            <label className="option__label" tabIndex={0} htmlFor={field.value}>
-                {children}
-            </label>
-        </div>
+        <label className={`${className || ""} option`}>
+            <input type="radio" className="option__input" {...field} />
+            <div className="option__label">{children}</div>
+        </label>
     );
 };
 

@@ -2,10 +2,7 @@
     position: relative;
 
     &__input {
-        position: absolute;
-        width: 0;
-        height: 0;
-        opacity: 0;
+        @extend %visually-hidden;
         &:focus + .checkbox__label {
             border: rem(1) solid $primaryColor;
             background-color: $lightColor;

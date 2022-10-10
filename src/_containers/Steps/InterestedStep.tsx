@@ -1,14 +1,16 @@
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useContext, useMemo, useState } from "react";
 import { stepsNames } from "../../constants/data";
 import { useAppSelector } from "../../hooks/useRedux";
 import { formAPI } from "../../services/formAPI";
 import { Spinner } from "../../_components";
 import { Field } from "formik";
+import { FormContext } from "../Form";
 
 const InterestedStep = () => {
     const { step } = useAppSelector((state) => state.steps);
     const { isLoading, data: interests } = formAPI.useGetDataQuery("interests");
     const [userInterests, setUserInterests] = useState<string[]>([]);
+    const { errors, touched } = useContext(FormContext);
 
     const interestItems = useCallback(
         (cat: string) => {
@@ -42,17 +44,19 @@ const InterestedStep = () => {
 
     const onHandleAdd = (e: any) => {
         if (e.key === "Enter" && e.target.value.length > 0) {
-            e.preventDefault();
             setUserInterests((prev) => [...prev, e.target.value]);
         }
     };
 
     return (
-        <div className={`form__step intrested-step ${step === stepsNames.INTERESTS ? "_active" : ""}`}>
+        <div className={`step intrested-step ${step === stepsNames.INTERESTS ? "_active" : ""}`}>
             <div className="top">
                 <h3 className="title">What Are You Interested In?</h3>
                 <p className="text">Select from the list and add your own interests.</p>
-                <div className="input-form _icon-search">
+                {errors.interests && touched.interests && (
+                    <div className="_form-error">{errors.interests}</div>
+                )}
+                <div className="top__input input-form _icon-search">
                     <input
                         autoComplete="off"
                         name="addInterest"

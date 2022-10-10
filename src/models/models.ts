@@ -11,3 +11,15 @@ export interface IHub {
     title: string;
     popular: boolean;
 }
+
+export interface IUser {
+    hub: string;
+    objectives: string[];
+    profilePic: string;
+    linkedInUrl: string;
+    twitterUrl: string;
+    interests: string[];
+    firstName: string;
+    lastName: string;
+    about: string;
+}

@@ -11,7 +11,14 @@ const Input: FC<{ textarea?: boolean; [x: string]: any; name: string }> = ({ tex
             {textarea ? (
                 <textarea {...props} {...field} className={classNames}></textarea>
             ) : (
-                <input {...props} {...field} className={classNames} />
+                <input
+                    {...props}
+                    {...field}
+                    onKeyDown={(e) => {
+                        e.key === "Enter" && e.preventDefault();
+                    }}
+                    className={classNames}
+                />
             )}
 
             {meta.touched && meta.error && <div className="_form-error">{meta.error}</div>}

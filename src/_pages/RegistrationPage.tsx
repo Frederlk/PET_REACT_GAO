@@ -1,9 +1,12 @@
 import { FC } from "react";
 import { Helmet } from "react-helmet";
+import { useAppSelector } from "../hooks/useRedux";
 import { Logo } from "../_components";
-import { Buttons, Form } from "../_containers";
+import { FinalStep, Form } from "../_containers";
 
 const RegistrationPage: FC = () => {
+    const { user } = useAppSelector((state) => state.user);
+
     return (
         <>
             <Helmet>
@@ -16,9 +19,7 @@ const RegistrationPage: FC = () => {
                     <div className="form-page__content">
                         <Logo />
 
-                        <Form />
-
-                        <Buttons />
+                        {user ? <FinalStep /> : <Form />}
                     </div>
                 </div>
             </section>
