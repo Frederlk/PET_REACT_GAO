@@ -128,10 +128,12 @@
 
     &__file-input {
         @extend %visually-hidden;
-        &:focus + .profile-step__image-ibg {
-            outline: transparent solid rem(1);
-            border: rem(2) dashed $primaryColor;
-            box-shadow: 0px rem(1) rem(20) rgba(116, 120, 135, 0.1);
+        @media (any-hover: hover) {
+            &:focus + .profile-step__image-ibg {
+                outline: transparent solid rem(1);
+                border: rem(2) dashed $primaryColor;
+                box-shadow: 0px rem(1) rem(20) rgba(116, 120, 135, 0.1);
+            }
         }
     }
 
@@ -232,8 +234,10 @@
             color: $mainColor;
             border: rem(1) solid $mainColor;
         }
-        &:focus + .intrested-step__checkbox-text {
-            border: rem(1) solid $primaryColor;
+        @media (any-hover: hover) {
+            &:focus + .intrested-step__checkbox-text {
+                border: rem(1) solid $primaryColor;
+            }
         }
     }
 

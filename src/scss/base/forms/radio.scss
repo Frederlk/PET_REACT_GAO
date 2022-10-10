@@ -14,11 +14,13 @@
         &:checked + .option__label:after {
             opacity: 1;
         }
-        &:focus + .option__label {
-            outline: transparent solid rem(1);
-            border: rem(1) solid $primaryColor;
-            background-color: $lightColor;
-            box-shadow: 0px rem(1) rem(20) rgba(116, 120, 135, 0.1);
+        @media (any-hover: hover) {
+            &:focus + .option__label {
+                outline: transparent solid rem(1);
+                border: rem(1) solid $primaryColor;
+                background-color: $lightColor;
+                box-shadow: 0px rem(1) rem(20) rgba(116, 120, 135, 0.1);
+            }
         }
     }
 

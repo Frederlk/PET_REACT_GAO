@@ -3,11 +3,14 @@
 
     &__input {
         @extend %visually-hidden;
-        &:focus + .checkbox__label {
-            border: rem(1) solid $primaryColor;
-            background-color: $lightColor;
-            box-shadow: 0px rem(10) rem(20) rgba(116, 120, 135, 0.1);
+        @media (any-hover: hover) {
+            &:focus + .checkbox__label {
+                border: rem(1) solid $primaryColor;
+                background-color: $lightColor;
+                box-shadow: 0px rem(10) rem(20) rgba(116, 120, 135, 0.1);
+            }
         }
+
         &:checked + .checkbox__label {
             border: rem(1) solid $primaryColor;
             background-color: $lightColor;

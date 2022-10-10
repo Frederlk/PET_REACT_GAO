@@ -95,10 +95,13 @@ textarea {
         outline-offset: rem(-1);
         outline: transparent solid rem(1);
     }
-    &:focus {
-        color: $mainColor;
-        border: rem(1) solid $primaryColor;
+    @media (any-hover: hover) {
+        &:focus {
+            color: $mainColor;
+            border: rem(1) solid $primaryColor;
+        }
     }
+
     &._error {
         color: $primaryColor;
     }

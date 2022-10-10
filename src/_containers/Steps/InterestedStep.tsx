@@ -70,6 +70,13 @@ const InterestedStep = () => {
                 <Spinner />
             ) : (
                 <div className="intrested-step__body">
+                    {userInterests.length > 0 && (
+                        <div className="intrested-step__row">
+                            <div className="intrested-step__label label">Other</div>
+                            <div className="intrested-step__elements">{userInterestItems}</div>
+                        </div>
+                    )}
+
                     <div className="intrested-step__row">
                         <div className="intrested-step__label label">Business</div>
                         <div className="intrested-step__elements">{interestItems("business")}</div>
@@ -84,13 +91,6 @@ const InterestedStep = () => {
                         <div className="intrested-step__label label">Lifestyle</div>
                         <div className="intrested-step__elements">{interestItems("lifestyle")}</div>
                     </div>
-
-                    {userInterests.length > 0 && (
-                        <div className="intrested-step__row">
-                            <div className="intrested-step__label label">Other</div>
-                            <div className="intrested-step__elements">{userInterestItems}</div>
-                        </div>
-                    )}
                 </div>
             )}
         </div>
