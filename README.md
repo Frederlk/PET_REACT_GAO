@@ -1,69 +1,37 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[GAO](https://react-pet-gao.web.app/)
+----------------------------------------------------------------------------
 
-## Available Scripts
+A fully responsive step by step registration form with complete validation. Using different types of inputs and uploading profile image to Firebase Storage.
 
-In the project directory, you can run:
+### Stack
 
-### `npm start`
+*   React
+*   TypeScript
+*   Redux
+*   Firebase
+*   Formik
+*   SCSS
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### External Links
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+*   [Create Account Page](https://react-pet-gao.web.app/)
+*   [Registration Page](https://react-pet-gao.web.app/registration)
 
-### `npm test`
+### Built Date
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+October, 2022
 
-### `npm run build`
+![GAO_1](https://firebasestorage.googleapis.com/v0/b/petrinich-sergey----portfolio.appspot.com/o/PET_GAO%2FGAO_1.jpg?alt=media&token=9748f8da-0b4b-40a4-a590-cf40d65154fa)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![GAO_2](https://firebasestorage.googleapis.com/v0/b/petrinich-sergey----portfolio.appspot.com/o/PET_GAO%2FGAO_2.jpg?alt=media&token=da137a4c-4d36-4b88-a2e2-f624e4b46306)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![GAO_3](https://firebasestorage.googleapis.com/v0/b/petrinich-sergey----portfolio.appspot.com/o/PET_GAO%2FGAO_3.jpg?alt=media&token=6ae5c480-c4fb-40fb-9a78-db4c8d806c05)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![GAO_4](https://firebasestorage.googleapis.com/v0/b/petrinich-sergey----portfolio.appspot.com/o/PET_GAO%2FGAO_4.jpg?alt=media&token=eb49c279-4d0e-4dcf-adf5-8943b27b76cd)
 
-### `npm run eject`
+![GAO_5](https://firebasestorage.googleapis.com/v0/b/petrinich-sergey----portfolio.appspot.com/o/PET_GAO%2FGAO_5.jpg?alt=media&token=2878bc1c-9c0f-47c6-a479-dbbe2a7293d1)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![GAO_6](https://firebasestorage.googleapis.com/v0/b/petrinich-sergey----portfolio.appspot.com/o/PET_GAO%2FGAO_6.jpg?alt=media&token=a0a5c95c-3879-4afd-9219-29656b62d4c6)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## [Packages]
-
-`Forms`
-npm i formik yup
-
-`React-Helmet`
-npm i react-helmet
-npm i --save @types/react-helmet
-
-`React-GoTo`
-npm i react-scroll
-npm i --save @types/react-scroll
-
-`API`
-npm i axios
-npm i lodash (for Debounce)
-npm i firebase
-npm i firestore-export-import
-
-`etc.`
-npm i lightgallery
-npm i swiper
-npm i react-swipeable
-npm i date-fns
-npm i html-react-parser
-
-npm i uuid
-npm i npm i --save-dev @types/uuid
+![GAO_7](https://firebasestorage.googleapis.com/v0/b/petrinich-sergey----portfolio.appspot.com/o/PET_GAO%2FGAO_7.jpg?alt=media&token=ba214c08-aac4-43cf-84c9-5f412387b62a)
